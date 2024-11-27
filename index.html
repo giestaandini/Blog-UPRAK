@@ -1,0 +1,860 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Hugo 0.101.0">
+    <title>Halaman Blog UPRAK</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/4.6/examples/album/">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    
+    <!-- Bootstrap core CSS -->
+    <link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+
+      .position-relative {
+        position: relative;
+      }
+
+      .img-overlay {
+          position: relative;
+          overflow: hidden;
+      }
+
+      .img-overlay img {
+          width: 100%;
+          height: auto;
+          display: block;
+          transition: transform 0.3s, filter 0.3s;
+      }
+
+      /* Efek hover untuk gambar */
+      .img-overlay:hover img {
+          transform: scale(1.1); /* Zoom in sedikit saat hover */
+          filter: brightness(50%); /* Membuat gambar menjadi lebih gelap */
+      }
+
+      /* Teks muncul di tengah gambar saat hover */
+      .hover-text {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          color: white;
+          font-size: 20px;
+          font-weight: bold;
+          text-align: center;
+          opacity: 0;
+          transition: opacity 0.3s;
+      }
+
+      .img-overlay:hover .hover-text {
+          opacity: 1;
+      }
+
+      /* Modal Styles */
+      .modal {
+          display: none;
+          position: fixed;
+          z-index: 1000;
+          padding-top: 60px;
+          left: 0;
+          top: 0;
+          width: 100%;
+          height: 100%;
+          overflow: auto;
+          background-color: rgba(0, 0, 0, 0.9);
+      }
+
+      .modal-content {
+          margin: auto;
+          display: block;
+          max-width: 80%;
+      }
+
+      .close {
+          position: absolute;
+          top: 20px;
+          right: 35px;
+          color: white;
+          font-size: 40px;
+          font-weight: bold;
+          cursor: pointer;
+      }
+
+      .close:hover,
+      .close:focus {
+          color: #bbb;
+          text-decoration: none;
+          cursor: pointer;
+      }
+
+      #caption {
+          color: white;
+          text-align: center;
+          padding: 10px 0;
+          height: 150px;
+      }
+
+      .card {
+        display: flex;
+        flex-direction: column; /* Pastikan card isinya dalam kolom vertikal */
+        height: 100%; /* Membuat tinggi kartu bisa disesuaikan */
+      }
+
+      .card-body {
+          flex: 1; /* Memastikan body card mengisi ruang yang tersisa */
+      }
+
+      .card-img-top {
+          width: 100%;
+          height: 225px;
+          object-fit: cover;
+      }
+
+      .card-body {
+          height: 100%; /* Menjamin agar body card bisa menyesuaikan tinggi dengan card */
+      }
+  </style>
+
+    
+    <!-- Custom styles for this template -->
+    <link href="album.css" rel="stylesheet">
+  </head>
+  <body>
+    <header>
+      <div class="collapse bg-dark" id="navbarHeader">
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-8 col-md-7 py-4">
+              <h4 class="text-white">About</h4>
+              <p class="text-muted">Ini Adalah Website Blog Dokumentasi UPRAK Cloud Computing Kelas XII 2024. UPRAK Dilaksanakan Pada Tanggal 21 November 2024 Dilaksankan Dengan Lancar Dan Sempurna. Saya Giesta Andini Putri Kelas XII TKJ A Nomor Absen 15 Membuat Ini Dengan Tujuan Mengumpulkan Tugas.</p>
+            </div>
+            <div class="col-sm-4 offset-md-1 py-4">
+              <h4 class="text-white">Contact</h4>
+              <ul class="list-unstyled">
+                <li><a href="https://www.instagram.com/tata_staap" class="text-white" target="_blank">Follow on Instagram</a></li>
+                <li><a href="mailto:giestadevelopment@gmail.com" class="text-white">Email me</a></li>
+                <li><a href="https://github.com/giestaandini" class="text-white" target="_blank">Follow on GitHub</a></li>
+            </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="navbar navbar-dark bg-dark shadow-sm">
+        <div class="container d-flex justify-content-between">
+          <a href="#" class="navbar-brand d-flex align-items-center">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" aria-hidden="true" class="mr-2" viewBox="0 0 24 24" focusable="false"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
+            <strong>GiestaAP</strong>
+          </a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main role="main">
+
+      <section class="jumbotron text-center">
+        <div class="container">
+          <h1>Album UPRAK</h1>
+          <p class="lead text-muted">Blog ini dirancang untuk mendokumentasi langkah-langkah UPRAK Cloud Computing, memberikan pengetahuan praktis dan keterampilan yang berguna dalam prosesnya. Pastikan Anda tidak melewatkan setiap detail penting.</p>
+        </div>
+      </section>
+
+      <div class="album py-5 bg-light">
+        <div class="container">
+
+        <div class="row" id="album">
+            <div class="col-md-4 p-3">
+                <div class="card mb-4 shadow-sm">
+                    <div class="img-overlay">
+                        <img class="bd-placeholder-img card-img-top" width="100%" height="225"
+                             src="img/Screenshot (39).png" alt="Pertama ubah yang Awalnya N. Virginia Menjadi Oregon" onclick="openModal(this)">
+                        <div class="hover-text">Foto 1</div>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-text">Pertama ubah yang Awalnya N. Virginia Menjadi Oregon</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 p-3">
+                <div class="card mb-4 shadow-sm">
+                    <div class="img-overlay">
+                        <img class="bd-placeholder-img card-img-top" width="100%" height="225"
+                             src="img/Screenshot (40).png" alt="Lalu Masuk Ke VPC" onclick="openModal(this)">
+                        <div class="hover-text">Foto 2</div>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-text">Lalu Masuk Ke VPC</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 p-3">
+                <div class="card mb-4 shadow-sm">
+                    <div class="img-overlay">
+                        <img class="bd-placeholder-img card-img-top" width="100%" height="225"
+                             src="img/Screenshot (41).png" alt="Masuk Ke Menu Your VPCs dan Create VPC" onclick="openModal(this)">
+                        <div class="hover-text">Foto 3</div>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-text">Masuk Ke Menu Your VPCs dan Create VPC</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 p-3">
+                <div class="card mb-4 shadow-sm">
+                    <div class="img-overlay">
+                        <img class="bd-placeholder-img card-img-top" width="100%" height="225"
+                             src="img/Screenshot (43).png" alt="Berikut Adalah yang perlu diisikan" onclick="openModal(this)">
+                        <div class="hover-text">Foto 4</div>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-text">Berikut Adalah yang perlu diisikan</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 p-3">
+                <div class="card mb-4 shadow-sm">
+                    <div class="img-overlay">
+                        <img class="bd-placeholder-img card-img-top" width="100%" height="225"
+                             src="img/Screenshot (44).png" alt="VPC Berhasil dibuat, Sekarang Pergi ke Menu Subnet dan Create Subnet" onclick="openModal(this)">
+                        <div class="hover-text">Foto 5</div>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-text">VPC Berhasil dibuat, Sekarang Pergi ke Menu Subnet dan Create Subnet</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 p-3">
+                <div class="card mb-4 shadow-sm">
+                    <div class="img-overlay">
+                        <img class="bd-placeholder-img card-img-top" width="100%" height="225"
+                             src="img/6.png" alt="Pilih VPC yang Dibuat Tadi" onclick="openModal(this)">
+                        <div class="hover-text">Foto 6</div>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-text">Pilih VPC yang Dibuat Tadi</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 p-3">
+                <div class="card mb-4 shadow-sm">
+                    <div class="img-overlay">
+                        <img class="bd-placeholder-img card-img-top" width="100%" height="225"
+                             src="img/Screenshot (45).png" alt="Berikut adalah Membuat Subnet Publik yang Perlu Diisikan" onclick="openModal(this)">
+                        <div class="hover-text">Foto 7</div>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-text">Berikut adalah Membuat Subnet Publik yang Perlu Diisikan</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 p-3">
+                <div class="card mb-4 shadow-sm">
+                    <div class="img-overlay">
+                        <img class="bd-placeholder-img card-img-top" width="100%" height="225"
+                             src="img/Screenshot (46).png" alt="Berikut adalah Membuat Subnet Privat yang Perlu Diisikan" onclick="openModal(this)">
+                        <div class="hover-text">Foto 8</div>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-text">Berikut adalah Membuat Subnet Privat yang Perlu Diisikan</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 p-3">
+                <div class="card mb-4 shadow-sm">
+                    <div class="img-overlay">
+                        <img class="bd-placeholder-img card-img-top" width="100%" height="225"
+                             src="img/Screenshot (47).png" alt="Subnet Berhasil Dibuat, Sekarang Pergi ke Menu Internet Gateway dan Create Internet Gateway" onclick="openModal(this)">
+                        <div class="hover-text">Foto 9</div>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-text">Subnet Berhasil Dibuat, Sekarang Pergi ke Menu Internet Gateway dan Create Internet Gateway</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 p-3">
+              <div class="card mb-4 shadow-sm">
+                  <div class="img-overlay">
+                      <img class="bd-placeholder-img card-img-top" width="100%" height="225"
+                           src="img/Screenshot (48).png" alt="Berikut adalah yang Perlu Diisikan" onclick="openModal(this)">
+                      <div class="hover-text">Foto 10</div>
+                  </div>
+                  <div class="card-body">
+                      <p class="card-text">Berikut adalah yang Perlu Diisikan</p>
+                  </div>
+              </div>
+            </div>
+            <div class="col-md-4 p-3">
+              <div class="card mb-4 shadow-sm">
+                  <div class="img-overlay">
+                      <img class="bd-placeholder-img card-img-top" width="100%" height="225"
+                           src="img/Screenshot (49).png" alt="Internet Gateway Berhasil Dibuat, Lalu Attach To VPC" onclick="openModal(this)">
+                      <div class="hover-text">Foto 11</div>
+                  </div>
+                  <div class="card-body">
+                      <p class="card-text">Internet Gateway Berhasil Dibuat, Lalu Attach To VPC</p>
+                  </div>
+              </div>
+            </div>
+            <div class="col-md-4 p-3">
+              <div class="card mb-4 shadow-sm">
+                  <div class="img-overlay">
+                      <img class="bd-placeholder-img card-img-top" width="100%" height="225"
+                           src="img/Screenshot (50).png" alt="Attach Internet Gateway" onclick="openModal(this)">
+                      <div class="hover-text">Foto 12</div>
+                  </div>
+                  <div class="card-body">
+                      <p class="card-text">Attach Internet Gateway</p>
+                  </div>
+              </div>
+            </div>
+            <div class="col-md-4 p-3">
+              <div class="card mb-4 shadow-sm">
+                  <div class="img-overlay">
+                      <img class="bd-placeholder-img card-img-top" width="100%" height="225"
+                           src="img/Screenshot (51).png" alt="Setelah diattach Internet Gatewaynya Sekarang Create Route Table Publik" onclick="openModal(this)">
+                      <div class="hover-text">Foto 13</div>
+                  </div>
+                  <div class="card-body">
+                      <p class="card-text">Setelah diattach Internet Gatewaynya Sekarang Create Route Table Publik</p>
+                  </div>
+              </div>
+            </div>
+            <div class="col-md-4 p-3">
+              <div class="card mb-4 shadow-sm">
+                  <div class="img-overlay">
+                      <img class="bd-placeholder-img card-img-top" width="100%" height="225"
+                           src="img/Screenshot (52).png" alt="Edit Routes pada Route Publik yang Baru dibuat Tadi" onclick="openModal(this)">
+                      <div class="hover-text">Foto 14</div>
+                  </div>
+                  <div class="card-body">
+                      <p class="card-text">Edit Routes pada Route Publik yang Baru dibuat Tadi</p>
+                  </div>
+              </div>
+            </div>
+            <div class="col-md-4 p-3">
+              <div class="card mb-4 shadow-sm">
+                  <div class="img-overlay">
+                      <img class="bd-placeholder-img card-img-top" width="100%" height="225"
+                           src="img/Screenshot (53).png" alt="Setelah Edit Routes, Sekarang Edit Subnet Associations Route Publik" onclick="openModal(this)">
+                      <div class="hover-text">Foto 15</div>
+                  </div>
+                  <div class="card-body">
+                      <p class="card-text">Setelah Edit Routes, Sekarang Edit Subnet Associations Route Publik</p>
+                  </div>
+              </div>
+            </div>
+            <div class="col-md-4 p-3">
+              <div class="card mb-4 shadow-sm">
+                  <div class="img-overlay">
+                      <img class="bd-placeholder-img card-img-top" width="100%" height="225"
+                           src="img/Screenshot (54).png" alt="Pilih Subnet Publik yang Sudah Dibuat Tadi, Lalu Save Associations" onclick="openModal(this)">
+                      <div class="hover-text">Foto 16</div>
+                  </div>
+                  <div class="card-body">
+                      <p class="card-text">Pilih Subnet Publik yang Sudah Dibuat Tadi, Lalu Save Associations</p>
+                  </div>
+              </div>
+            </div>
+            <div class="col-md-4 p-3">
+              <div class="card mb-4 shadow-sm">
+                  <div class="img-overlay">
+                      <img class="bd-placeholder-img card-img-top" width="100%" height="225"
+                           src="img/Screenshot (55).png" alt="Sekarang Create Route Table yang Privat" onclick="openModal(this)">
+                      <div class="hover-text">Foto 17</div>
+                  </div>
+                  <div class="card-body">
+                      <p class="card-text">Sekarang Create Route Table yang Privat</p>
+                  </div>
+              </div>
+            </div>
+            <div class="col-md-4 p-3">
+              <div class="card mb-4 shadow-sm">
+                  <div class="img-overlay">
+                      <img class="bd-placeholder-img card-img-top" width="100%" height="225"
+                           src="img/Screenshot (56).png" alt="Route Berhasil dibuat Sekarang Edit Subnet Associations" onclick="openModal(this)">
+                      <div class="hover-text">Foto 18</div>
+                  </div>
+                  <div class="card-body">
+                      <p class="card-text">Route Berhasil dibuat Sekarang Edit Subnet Associations</p>
+                  </div>
+              </div>
+            </div>
+            <div class="col-md-4 p-3">
+              <div class="card mb-4 shadow-sm">
+                  <div class="img-overlay">
+                      <img class="bd-placeholder-img card-img-top" width="100%" height="225"
+                           src="img/Screenshot (57).png" alt="Pilih Subnet Privat yang Sudah Dibuat tadi, Lalu Save Associations" onclick="openModal(this)">
+                      <div class="hover-text">Foto 19</div>
+                  </div>
+                  <div class="card-body">
+                      <p class="card-text">Pilih Subnet Privat yang Sudah Dibuat tadi, Lalu Save Associations</p>
+                  </div>
+              </div>
+            </div>
+            <div class="col-md-4 p-3">
+              <div class="card mb-4 shadow-sm">
+                  <div class="img-overlay">
+                      <img class="bd-placeholder-img card-img-top" width="100%" height="225"
+                           src="img/Screenshot (58).png" alt="Buat Instances, Masukke EC2 Terlebih Dahulu" onclick="openModal(this)">
+                      <div class="hover-text">Foto 20</div>
+                  </div>
+                  <div class="card-body">
+                      <p class="card-text">Buat Instances, Masukke EC2 Terlebih Dahulu</p>
+                  </div>
+              </div>
+            </div>
+            <div class="col-md-4 p-3">
+              <div class="card mb-4 shadow-sm">
+                  <div class="img-overlay">
+                      <img class="bd-placeholder-img card-img-top" width="100%" height="225"
+                           src="img/Screenshot (59).png" alt="Masukke Menu Instances" onclick="openModal(this)">
+                      <div class="hover-text">Foto 21</div>
+                  </div>
+                  <div class="card-body">
+                      <p class="card-text">Masukke Menu Instances</p>
+                  </div>
+              </div>
+            </div>
+            <div class="col-md-4 p-3">
+              <div class="card mb-4 shadow-sm">
+                  <div class="img-overlay">
+                      <img class="bd-placeholder-img card-img-top" width="100%" height="225"
+                           src="img/Screenshot (60).png" alt="Lalu Launch Instances" onclick="openModal(this)">
+                      <div class="hover-text">Foto 22</div>
+                  </div>
+                  <div class="card-body">
+                      <p class="card-text">Lalu Launch Instances</p>
+                  </div>
+              </div>
+            </div>
+            <div class="col-md-4 p-3">
+              <div class="card mb-4 shadow-sm">
+                  <div class="img-overlay">
+                      <img class="bd-placeholder-img card-img-top" width="100%" height="225"
+                           src="img/Screenshot (61).png" alt="Beri Nama Instances" onclick="openModal(this)">
+                      <div class="hover-text">Foto 23</div>
+                  </div>
+                  <div class="card-body">
+                      <p class="card-text">Beri Nama Instances</p>
+                  </div>
+              </div>
+            </div>
+            <div class="col-md-4 p-3">
+              <div class="card mb-4 shadow-sm">
+                  <div class="img-overlay">
+                      <img class="bd-placeholder-img card-img-top" width="100%" height="225"
+                           src="img/Screenshot (62).png" alt="Atur Network Subnetnya yang Publik" onclick="openModal(this)">
+                      <div class="hover-text">Foto 24</div>
+                  </div>
+                  <div class="card-body">
+                      <p class="card-text">Atur Network Subnetnya yang Publik</p>
+                  </div>
+              </div>
+            </div>
+            <div class="col-md-4 p-3">
+              <div class="card mb-4 shadow-sm">
+                  <div class="img-overlay">
+                      <img class="bd-placeholder-img card-img-top" width="100%" height="225"
+                           src="img/Screenshot (63).png" alt="Buat Instances Lagi untuk yang Network Subnet Privat" onclick="openModal(this)">
+                      <div class="hover-text">Foto 25</div>
+                  </div>
+                  <div class="card-body">
+                      <p class="card-text">Buat Instances Lagi untuk yang Network Subnet Privat</p>
+                  </div>
+              </div>
+            </div>
+            <div class="col-md-4 p-3">
+              <div class="card mb-4 shadow-sm">
+                  <div class="img-overlay">
+                      <img class="bd-placeholder-img card-img-top" width="100%" height="225"
+                           src="img/Screenshot (64).png" alt="Network Subnetnya diedit Pilih yang Privat" onclick="openModal(this)">
+                      <div class="hover-text">Foto 26</div>
+                  </div>
+                  <div class="card-body">
+                      <p class="card-text">Network Subnetnya diedit Pilih yang Privat</p>
+                  </div>
+              </div>
+            </div>
+            <div class="col-md-4 p-3">
+              <div class="card mb-4 shadow-sm">
+                  <div class="img-overlay">
+                      <img class="bd-placeholder-img card-img-top" width="100%" height="225"
+                           src="img/Screenshot (65).png" alt="Lalu Connect Instances yang Network Subnetnya Publik" onclick="openModal(this)">
+                      <div class="hover-text">Foto 27</div>
+                  </div>
+                  <div class="card-body">
+                      <p class="card-text">Lalu Connect Instances yang Network Subnetnya Publik</p>
+                  </div>
+              </div>
+            </div>
+            <div class="col-md-4 p-3">
+              <div class="card mb-4 shadow-sm">
+                  <div class="img-overlay">
+                      <img class="bd-placeholder-img card-img-top" width="100%" height="225"
+                           src="img/Screenshot (66).png" alt="Tekan Connect" onclick="openModal(this)">
+                      <div class="hover-text">Foto 28</div>
+                  </div>
+                  <div class="card-body">
+                      <p class="card-text">Tekan Connect</p>
+                  </div>
+              </div>
+            </div>
+            <div class="col-md-4 p-3">
+              <div class="card mb-4 shadow-sm">
+                  <div class="img-overlay">
+                      <img class="bd-placeholder-img card-img-top" width="100%" height="225"
+                           src="img/Screenshot (67).png" alt="Jika Sudah Muncul gambar Burungnya Maka Itu sudah Berhasil" onclick="openModal(this)">
+                      <div class="hover-text">Foto 29</div>
+                  </div>
+                  <div class="card-body">
+                      <p class="card-text">Jika Sudah Muncul gambar Burungnya Maka Itu sudah Berhasil</p>
+                  </div>
+              </div>
+            </div>
+            <div class="col-md-4 p-3">
+              <div class="card mb-4 shadow-sm">
+                  <div class="img-overlay">
+                      <img class="bd-placeholder-img card-img-top" width="100%" height="225"
+                           src="img/Screenshot (68).png" alt="Ping ke Google.com" onclick="openModal(this)">
+                      <div class="hover-text">Foto 30</div>
+                  </div>
+                  <div class="card-body">
+                      <p class="card-text">Ping ke Google.com</p>
+                  </div>
+              </div>
+            </div>
+            <div class="col-md-4 p-3">
+              <div class="card mb-4 shadow-sm">
+                  <div class="img-overlay">
+                      <img class="bd-placeholder-img card-img-top" width="100%" height="225"
+                           src="img/65.png" alt="Masukke Root dengan cara sudo su" onclick="openModal(this)">
+                      <div class="hover-text">Foto 31</div>
+                  </div>
+                  <div class="card-body">
+                      <p class="card-text">Masukke Root dengan cara Sudo su</p>
+                  </div>
+              </div>
+            </div>
+            <div class="col-md-4 p-3">
+              <div class="card mb-4 shadow-sm">
+                  <div class="img-overlay">
+                      <img class="bd-placeholder-img card-img-top" width="100%" height="225"
+                           src="img/66.png" alt="Install Paket httpd" onclick="openModal(this)">
+                      <div class="hover-text">Foto 32</div>
+                  </div>
+                  <div class="card-body">
+                      <p class="card-text">Install Paket httpd</p>
+                  </div>
+              </div>
+            </div>
+            <div class="col-md-4 p-3">
+              <div class="card mb-4 shadow-sm">
+                  <div class="img-overlay">
+                      <img class="bd-placeholder-img card-img-top" width="100%" height="225"
+                           src="img/67.png" alt="Cek Status httpd" onclick="openModal(this)">
+                      <div class="hover-text">Foto 33</div>
+                  </div>
+                  <div class="card-body">
+                      <p class="card-text">Cek Status httpd</p>
+                  </div>
+              </div>
+            </div>
+            <div class="col-md-4 p-3">
+              <div class="card mb-4 shadow-sm">
+                  <div class="img-overlay">
+                      <img class="bd-placeholder-img card-img-top" width="100%" height="225"
+                           src="img/68.png" alt="Masukke Folder /var/www/html dan masukke index.html" onclick="openModal(this)">
+                      <div class="hover-text">Foto 34</div>
+                  </div>
+                  <div class="card-body">
+                      <p class="card-text">Masukke Folder /var/www/html dan masukke index.html</p>
+                  </div>
+              </div>
+            </div>
+            <div class="col-md-4 p-3">
+              <div class="card mb-4 shadow-sm">
+                  <div class="img-overlay">
+                      <img class="bd-placeholder-img card-img-top" width="100%" height="225"
+                           src="img/Screenshot (73).png" alt="Isikan Index.html dengan script html" onclick="openModal(this)">
+                      <div class="hover-text">Foto 35</div>
+                  </div>
+                  <div class="card-body">
+                      <p class="card-text">Isikan Index.html dengan script html</p>
+                  </div>
+              </div>
+            </div>
+            <div class="col-md-4 p-3">
+              <div class="card mb-4 shadow-sm">
+                  <div class="img-overlay">
+                      <img class="bd-placeholder-img card-img-top" width="100%" height="225"
+                           src="img/Screenshot (78).png" alt="Setelah itu Simpan dan buka IP Publik Instances Publik tadi" onclick="openModal(this)">
+                      <div class="hover-text">Foto 36</div>
+                  </div>
+                  <div class="card-body">
+                      <p class="card-text">Setelah itu Simpan dan buka IP Publik Instances Publik tadi</p>
+                  </div>
+              </div>
+            </div>
+            <div class="col-md-4 p-3">
+              <div class="card mb-4 shadow-sm">
+                  <div class="img-overlay">
+                      <img class="bd-placeholder-img card-img-top" width="100%" height="225"
+                           src="img/Screenshot (69).png" alt="Edit Inbound Rules pada Instances yang Network Subnetnya Publik" onclick="openModal(this)">
+                      <div class="hover-text">Foto 37</div>
+                  </div>
+                  <div class="card-body">
+                      <p class="card-text">Edit Inbound Rules pada Instances yang Network Subnetnya Publik</p>
+                  </div>
+              </div>
+            </div>
+            <div class="col-md-4 p-3">
+              <div class="card mb-4 shadow-sm">
+                  <div class="img-overlay">
+                      <img class="bd-placeholder-img card-img-top" width="100%" height="225"
+                           src="img/Screenshot (70).png" alt="Masukke RDS lalu Masukke Menu Database dan Create database" onclick="openModal(this)">
+                      <div class="hover-text">Foto 38</div>
+                  </div>
+                  <div class="card-body">
+                      <p class="card-text">Masukke RDS lalu Masukke Menu Database dan Create database</p>
+                  </div>
+              </div>
+            </div>
+            <div class="col-md-4 p-3">
+              <div class="card mb-4 shadow-sm">
+                  <div class="img-overlay">
+                      <img class="bd-placeholder-img card-img-top" width="100%" height="225"
+                           src="img/Screenshot (71).png" alt="Pilih database yang Mariadb" onclick="openModal(this)">
+                      <div class="hover-text">Foto 39</div>
+                  </div>
+                  <div class="card-body">
+                      <p class="card-text">Pilih database yang Mariadb</p>
+                  </div>
+              </div>
+            </div>
+            <div class="col-md-4 p-3">
+              <div class="card mb-4 shadow-sm">
+                  <div class="img-overlay">
+                      <img class="bd-placeholder-img card-img-top" width="100%" height="225"
+                           src="img/Screenshot (72).png" alt="Pilih Templates Free tier" onclick="openModal(this)">
+                      <div class="hover-text">Foto 40</div>
+                  </div>
+                  <div class="card-body">
+                      <p class="card-text">Pilih Templates Free tier</p>
+                  </div>
+              </div>
+            </div>
+            <div class="col-md-4 p-3">
+              <div class="card mb-4 shadow-sm">
+                  <div class="img-overlay">
+                      <img class="bd-placeholder-img card-img-top" width="100%" height="225"
+                           src="img/Screenshot (75).png" alt="Beri Nama Database, Username dan Password" onclick="openModal(this)">
+                      <div class="hover-text">Foto 41</div>
+                  </div>
+                  <div class="card-body">
+                      <p class="card-text">Beri Nama Database, Username dan Password</p>
+                  </div>
+              </div>
+            </div>
+            <div class="col-md-4 p-3">
+              <div class="card mb-4 shadow-sm">
+                  <div class="img-overlay">
+                      <img class="bd-placeholder-img card-img-top" width="100%" height="225"
+                           src="img/Screenshot (76).png" alt="Pilih VPC dan Publik Accesnya di No" onclick="openModal(this)">
+                      <div class="hover-text">Foto 42</div>
+                  </div>
+                  <div class="card-body">
+                      <p class="card-text">Pilih VPC dan Publik Accesnya di No</p>
+                  </div>
+              </div>
+            </div>
+            <div class="col-md-4 p-3">
+              <div class="card mb-4 shadow-sm">
+                  <div class="img-overlay">
+                      <img class="bd-placeholder-img card-img-top" width="100%" height="225"
+                           src="img/Screenshot (77).png" alt="Edit lagi pada bagian Inbound Rules Instances Publik" onclick="openModal(this)">
+                      <div class="hover-text">Foto 43</div>
+                  </div>
+                  <div class="card-body">
+                      <p class="card-text">Edit lagi pada bagian Inbound Rules Instances Publik</p>
+                  </div>
+              </div>
+            </div>
+            <div class="col-md-4 p-3">
+              <div class="card mb-4 shadow-sm">
+                  <div class="img-overlay">
+                      <img class="bd-placeholder-img card-img-top" width="100%" height="225"
+                           src="img/69.png" alt="Install Mariadb di Terminal Instances Publik tadi" onclick="openModal(this)">
+                      <div class="hover-text">Foto 44</div>
+                  </div>
+                  <div class="card-body">
+                      <p class="card-text">Install Mariadb di Terminal Instances Publik tadi</p>
+                  </div>
+              </div>
+            </div>
+            <div class="col-md-4 p-3">
+              <div class="card mb-4 shadow-sm">
+                  <div class="img-overlay">
+                      <img class="bd-placeholder-img card-img-top" width="100%" height="225"
+                           src="img/70.png" alt="Coba Remote Database jika muncul seperti itu berarti Berhasil" onclick="openModal(this)">
+                      <div class="hover-text">Foto 45</div>
+                  </div>
+                  <div class="card-body">
+                      <p class="card-text">Coba Remote Database jika muncul seperti itu berarti Berhasil</p>
+                  </div>
+              </div>
+            </div>
+            
+        
+            <!-- Tambahkan foto lainnya dengan cara yang sama -->
+        </div>    
+          
+          <!-- Modal untuk menampilkan gambar -->
+          <div id="myModal" class="modal" onclick="closeModal()">
+            <span class="close">&times;</span>
+            <img class="modal-content" id="modalImg">
+            <div id="caption"></div>
+          </div>
+
+          
+        </div>
+
+      </div>
+        <!-- Navigasi -->
+        <div class="d-flex justify-content-center mt-4">
+          <nav aria-label="Pagination">
+              <ul class="pagination justify-content-center">
+                  <li class="page-item" id="prev">
+                      <button class="page-link" onclick="navigate(-1)">&laquo;</button>
+                  </li>
+                  <span id="page-numbers" class="d-flex"></span>
+                  <li class="page-item" id="next">
+                      <button class="page-link" onclick="navigate(1)">&raquo;</button>
+                  </li>
+              </ul>
+          </nav>
+      </div>      
+    </div>
+
+
+    </main>
+
+    <footer class="text-muted">
+      <div class="container">
+        <p class="float-right">
+          <a href="#">Back to top</a>
+        </p>
+        <p>Album UPRAK &copy; 2024 November 21 </p>
+        <p>Giesta Andini Putri | SMK Sakti Gemolong</p>
+      </div>
+    </footer>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script>window.jQuery || document.write('<script src="../assets/js/vendor/jquery.slim.min.js"><\/script>')</script><script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
+    <script>
+      let currentPage = 0;
+      const photosPerPage = 6;
+      const album = document.getElementById('album');
+      const totalPhotos = album.children.length;
+      const totalPages = Math.ceil(totalPhotos / photosPerPage);
+      const pageNumbersContainer = document.getElementById('page-numbers');
+
+      // Fungsi untuk menampilkan foto berdasarkan halaman saat ini
+      function showPhotos() {
+          for (let i = 0; i < totalPhotos; i++) {
+              album.children[i].style.display =
+                  i >= currentPage * photosPerPage && i < (currentPage + 1) * photosPerPage
+                      ? 'block'
+                      : 'none';
+          }
+      }
+
+      // Fungsi navigasi ke halaman sebelumnya/berikutnya
+      function navigate(direction) {
+          currentPage += direction;
+          showPhotos();
+          updatePagination();
+          localStorage.setItem('currentPage', currentPage); // Simpan halaman ke localStorage
+      }
+
+      // Fungsi untuk memperbarui navigasi halaman
+      function updatePagination() {
+          document.getElementById('prev').classList.toggle('disabled', currentPage === 0);
+          document.getElementById('next').classList.toggle('disabled', currentPage === totalPages - 1);
+
+          pageNumbersContainer.innerHTML = '';
+
+          for (let i = 0; i < totalPages; i++) {
+              const pageButton = document.createElement('li');
+              pageButton.className = `page-item ${i === currentPage ? 'active' : ''}`;
+              pageButton.innerHTML = `<button class="page-link" onclick="goToPage(${i})">${i + 1}</button>`;
+              pageNumbersContainer.appendChild(pageButton);
+          }
+      }
+
+      // Fungsi untuk berpindah ke halaman tertentu
+      function goToPage(page) {
+          currentPage = page;
+          showPhotos();
+          updatePagination();
+          localStorage.setItem('currentPage', currentPage); // Simpan halaman ke localStorage
+      }
+
+      // Ambil halaman terakhir dari localStorage saat halaman dimuat
+      window.onload = function () {
+          const savedPage = localStorage.getItem('currentPage');
+          if (savedPage) {
+              currentPage = parseInt(savedPage, 10);
+          } else {
+              currentPage = 0;
+          }
+          showPhotos();
+          updatePagination();
+      };
+  </script>
+  <script>
+    function openModal(img) {
+    const modal = document.getElementById("myModal");
+    const modalImg = document.getElementById("modalImg");
+    const captionText = document.getElementById("caption");
+
+    modal.style.display = "block";  // Buka modal
+    modalImg.src = img.src;         // Ambil sumber gambar yang diklik
+    captionText.innerHTML = img.alt; // Tampilkan deskripsi dari alt
+}
+
+function closeModal() {
+    const modal = document.getElementById("myModal");
+    modal.style.display = "none";  // Tutup modal
+}
+</script>
+
+
+    
+
+  </body>
+</html>
